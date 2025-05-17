@@ -1,0 +1,11 @@
+#!/bin/sh
+func()
+{
+    echo 'before dotcmd'
+    ${1}
+    echo 'after dotcmd'
+}
+
+echo 'before function'
+func ". "return_until"" "dotcmd"  # don't rely on 'shift'
+echo 'after function'

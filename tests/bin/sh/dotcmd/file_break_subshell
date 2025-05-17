@@ -1,0 +1,4 @@
+#!/bin/sh
+echo 'before dotcmd'
+. "break_subshell"
+echo 'after dotcmd, return value:' 0

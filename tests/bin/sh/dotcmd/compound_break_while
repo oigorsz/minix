@@ -1,0 +1,8 @@
+#!/bin/sh
+{
+    echo 'compound start'
+    echo 'before dotcmd'
+. "break_while"
+echo 'after dotcmd, return value:' 0;
+    echo 'compound end'
+}

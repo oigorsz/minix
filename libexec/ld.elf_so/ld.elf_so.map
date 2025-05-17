@@ -1,0 +1,1185 @@
+Archive member included because of file (symbol)
+
+/usr/lib/libc_pic.a(getegid.pico)
+                              rtld.o (getegid)
+/usr/lib/libc_pic.a(strsep.pico)
+                              load.o (strsep)
+/usr/lib/libc_pic.a(environ.pico)
+                              rtld.o (environ)
+/usr/lib/libc_pic.a(geteuid.pico)
+                              rtld.o (geteuid)
+/usr/lib/libc_pic.a(strrchr.pico)
+                              rtld.o (strrchr)
+/usr/lib/libc_pic.a(getuid.pico)
+                              rtld.o (getuid)
+/usr/lib/libc_pic.a(getgid.pico)
+                              rtld.o (getgid)
+/usr/lib/libc_pic.a(mmap.pico)
+                              xmalloc.o (mmap)
+/usr/lib/libc_pic.a(memcmp.pico)
+                              search.o (memcmp)
+/usr/lib/libc_pic.a(strncmp.pico)
+                              rtld.o (strncmp)
+/usr/lib/libc_pic.a(abort.pico)
+                              rtld.o (abort)
+/usr/lib/libc_pic.a(signal.pico)
+                              /usr/lib/libc_pic.a(abort.pico) (_signal)
+/usr/lib/libc_pic.a(raise.pico)
+                              /usr/lib/libc_pic.a(abort.pico) (raise)
+/usr/lib/libc_pic.a(udivdi3.pico)
+                              headers.o (__udivdi3)
+/usr/lib/libc_pic.a(_exit.pico)
+                              exit.o (_exit)
+/usr/lib/libc_pic.a(sigaction.pico)
+                              /usr/lib/libc_pic.a(signal.pico) (__sigaction14)
+/usr/lib/libc_pic.a(open.pico)
+                              load.o (open)
+/usr/lib/libc_pic.a(loadname.pico)
+                              /usr/lib/libc_pic.a(open.pico) (_loadname)
+/usr/lib/libc_pic.a(kill.pico)
+                              /usr/lib/libc_pic.a(raise.pico) (_kill)
+/usr/lib/libc_pic.a(getpid.pico)
+                              /usr/lib/libc_pic.a(raise.pico) (getpid)
+/usr/lib/libc_pic.a(strcpy.pico)
+                              symver.o (strcpy)
+/usr/lib/libc_pic.a(sysctl.pico)
+                              paths.o (sysctl)
+/usr/lib/libc_pic.a(__sigreturn.pico)
+                              /usr/lib/libc_pic.a(sigaction.pico) (__sigreturn)
+/usr/lib/libc_pic.a(__sysctl.pico)
+                              /usr/lib/libc_pic.a(sysctl.pico) (__sysctl)
+/usr/lib/libc_pic.a(write.pico)
+                              xmalloc.o (write)
+/usr/lib/libc_pic.a(stat.pico)
+                              load.o (__fstat50)
+/usr/lib/libc_pic.a(sigreturn.pico)
+                              /usr/lib/libc_pic.a(__sigreturn.pico) (sigreturn)
+/usr/lib/libc_pic.a(read.pico)
+                              paths.o (read)
+/usr/lib/libc_pic.a(close.pico)
+                              rtld.o (close)
+/usr/lib/libc_pic.a(memset.pico)
+                              xmalloc.o (memset)
+/usr/lib/libc_pic.a(memcpy.pico)
+                              reloc.o (memcpy)
+/usr/lib/libc_pic.a(strncpy.pico)
+                              search.o (strncpy)
+/usr/lib/libc_pic.a(strlcpy.pico)
+                              /usr/lib/libc_pic.a(sysctl.pico) (_strlcpy)
+/usr/lib/libc_pic.a(sigprocmask.pico)
+                              /usr/lib/libc_pic.a(abort.pico) (__sigprocmask14)
+/usr/lib/libc_pic.a(strlen.pico)
+                              rtld.o (strlen)
+/usr/lib/libc_pic.a(strchr.pico)
+                              search.o (strchr)
+/usr/lib/libc_pic.a(ctype_.pico)
+                              expand.o (_ctype_tab_)
+/usr/lib/libc_pic.a(syscall.pico)
+                              /usr/lib/libc_pic.a(getegid.pico) (_syscall)
+/usr/lib/libc_pic.a(strcmp.pico)
+                              rtld.o (strcmp)
+/usr/lib/libc_pic.a(_errno.pico)
+                              xmalloc.o (__errno)
+/usr/lib/libc_pic.a(init.pico)
+                              /usr/lib/libc_pic.a(syscall.pico) (_minix_ipcvecs)
+/usr/lib/libc_pic.a(ipc_minix_kerninfo.pico)
+                              /usr/lib/libc_pic.a(init.pico) (ipc_minix_kerninfo)
+/usr/lib/libc_pic.a(_ipc.pico)
+                              /usr/lib/libc_pic.a(init.pico) (_ipc_notify_intr)
+/usr/lib/libc_pic.a(_do_kernel_call_intr.pico)
+                              /usr/lib/libc_pic.a(init.pico) (_do_kernel_call_intr)
+/usr/lib/libc_pic.a(errno.pico)
+                              /usr/lib/libc_pic.a(_errno.pico) (errno)
+
+Allocating common symbols
+Common symbol       size              file
+
+_rtld_objlist       0x4               rtld.o
+errno               0x4               /usr/lib/libc_pic.a(errno.pico)
+_rtld_invalid_paths
+                    0x4               search.o
+__sigintr           0x10              /usr/lib/libc_pic.a(signal.pico)
+_rtld_objtail       0x4               rtld.o
+_rtld_objcount      0x4               rtld.o
+__cleanup           0x4               exit.o
+_rtld_default_paths
+                    0x4               rtld.o
+__progname          0x4               rtld.o
+_rtld_objgen        0x4               rtld.o
+_rtld_objself       0x124             rtld.o
+_rtld_xforms        0x4               rtld.o
+_rtld_paths         0x4               rtld.o
+_rtld_pagesz        0x4               rtld.o
+_rtld_debug         0x10              rtld.o
+_rtld_objmain       0x4               rtld.o
+_rtld_objloads      0x4               rtld.o
+_rtld_trust         0x1               rtld.o
+
+Discarded input sections
+
+ .note.GNU-stack
+                0x00000000        0x0 mdreloc.o
+ .note.GNU-stack
+                0x00000000        0x0 rtld.o
+ .note.GNU-stack
+                0x00000000        0x0 reloc.o
+ .note.GNU-stack
+                0x00000000        0x0 symbol.o
+ .note.GNU-stack
+                0x00000000        0x0 xmalloc.o
+ .note.GNU-stack
+                0x00000000        0x0 xprintf.o
+ .note.GNU-stack
+                0x00000000        0x0 debug.o
+ .note.GNU-stack
+                0x00000000        0x0 map_object.o
+ .note.GNU-stack
+                0x00000000        0x0 load.o
+ .note.GNU-stack
+                0x00000000        0x0 search.o
+ .note.GNU-stack
+                0x00000000        0x0 headers.o
+ .note.GNU-stack
+                0x00000000        0x0 paths.o
+ .note.GNU-stack
+                0x00000000        0x0 expand.o
+ .note.GNU-stack
+                0x00000000        0x0 tls.o
+ .note.GNU-stack
+                0x00000000        0x0 symver.o
+ .note.GNU-stack
+                0x00000000        0x0 diagassert.o
+ .note.GNU-stack
+                0x00000000        0x0 exit.o
+ .note.GNU-stack
+                0x00000000        0x0 /usr/lib/libc_pic.a(getegid.pico)
+ .note.GNU-stack
+                0x00000000        0x0 /usr/lib/libc_pic.a(strsep.pico)
+ .note.GNU-stack
+                0x00000000        0x0 /usr/lib/libc_pic.a(environ.pico)
+ .note.GNU-stack
+                0x00000000        0x0 /usr/lib/libc_pic.a(geteuid.pico)
+ .note.GNU-stack
+                0x00000000        0x0 /usr/lib/libc_pic.a(getuid.pico)
+ .note.GNU-stack
+                0x00000000        0x0 /usr/lib/libc_pic.a(getgid.pico)
+ .note.GNU-stack
+                0x00000000        0x0 /usr/lib/libc_pic.a(mmap.pico)
+ .note.GNU-stack
+                0x00000000        0x0 /usr/lib/libc_pic.a(abort.pico)
+ .note.GNU-stack
+                0x00000000        0x0 /usr/lib/libc_pic.a(signal.pico)
+ .note.GNU-stack
+                0x00000000        0x0 /usr/lib/libc_pic.a(raise.pico)
+ .note.GNU-stack
+                0x00000000        0x0 /usr/lib/libc_pic.a(_exit.pico)
+ .note.GNU-stack
+                0x00000000        0x0 /usr/lib/libc_pic.a(sigaction.pico)
+ .note.GNU-stack
+                0x00000000        0x0 /usr/lib/libc_pic.a(open.pico)
+ .note.GNU-stack
+                0x00000000        0x0 /usr/lib/libc_pic.a(loadname.pico)
+ .note.GNU-stack
+                0x00000000        0x0 /usr/lib/libc_pic.a(kill.pico)
+ .note.GNU-stack
+                0x00000000        0x0 /usr/lib/libc_pic.a(getpid.pico)
+ .note.GNU-stack
+                0x00000000        0x0 /usr/lib/libc_pic.a(sysctl.pico)
+ .note.GNU-stack
+                0x00000000        0x0 /usr/lib/libc_pic.a(__sysctl.pico)
+ .note.GNU-stack
+                0x00000000        0x0 /usr/lib/libc_pic.a(write.pico)
+ .note.GNU-stack
+                0x00000000        0x0 /usr/lib/libc_pic.a(stat.pico)
+ .note.GNU-stack
+                0x00000000        0x0 /usr/lib/libc_pic.a(sigreturn.pico)
+ .note.GNU-stack
+                0x00000000        0x0 /usr/lib/libc_pic.a(read.pico)
+ .note.GNU-stack
+                0x00000000        0x0 /usr/lib/libc_pic.a(close.pico)
+ .note.GNU-stack
+                0x00000000        0x0 /usr/lib/libc_pic.a(strncpy.pico)
+ .note.GNU-stack
+                0x00000000        0x0 /usr/lib/libc_pic.a(strlcpy.pico)
+ .note.GNU-stack
+                0x00000000        0x0 /usr/lib/libc_pic.a(sigprocmask.pico)
+ .note.GNU-stack
+                0x00000000        0x0 /usr/lib/libc_pic.a(ctype_.pico)
+ .note.GNU-stack
+                0x00000000        0x0 /usr/lib/libc_pic.a(syscall.pico)
+ .note.GNU-stack
+                0x00000000        0x0 /usr/lib/libc_pic.a(_errno.pico)
+ .note.GNU-stack
+                0x00000000        0x0 /usr/lib/libc_pic.a(init.pico)
+ .note.GNU-stack
+                0x00000000        0x0 /usr/lib/libc_pic.a(errno.pico)
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+*default*        0x00000000         0xffffffff
+
+Linker script and memory map
+
+LOAD rtld_start.o
+LOAD mdreloc.o
+LOAD rtld.o
+LOAD reloc.o
+LOAD symbol.o
+LOAD xmalloc.o
+LOAD xprintf.o
+LOAD debug.o
+LOAD map_object.o
+LOAD load.o
+LOAD search.o
+LOAD headers.o
+LOAD paths.o
+LOAD expand.o
+LOAD tls.o
+LOAD symver.o
+LOAD diagassert.o
+LOAD exit.o
+LOAD /usr/lib/libc_pic.a
+                0x000000f4                . = (0x0 + SIZEOF_HEADERS)
+
+.note.gnu.build-id
+ *(.note.gnu.build-id)
+
+.hash           0x000000f4      0x344
+ *(.hash)
+ .hash          0x000000f4      0x344 rtld_start.o
+
+.gnu.hash
+ *(.gnu.hash)
+
+.dynsym         0x00000438      0x6e0
+ *(.dynsym)
+ .dynsym        0x00000438      0x6e0 rtld_start.o
+
+.dynstr         0x00000b18      0x32a
+ *(.dynstr)
+ .dynstr        0x00000b18      0x32a rtld_start.o
+
+.gnu.version    0x00000e42        0x0
+ *(.gnu.version)
+ .gnu.version   0x00000000        0x0 rtld_start.o
+
+.gnu.version_d  0x00000e44        0x0
+ *(.gnu.version_d)
+ .gnu.version_d
+                0x00000000        0x0 rtld_start.o
+
+.gnu.version_r  0x00000e44        0x0
+ *(.gnu.version_r)
+ .gnu.version_r
+                0x00000000        0x0 rtld_start.o
+
+.rel.dyn        0x00000e44      0x230
+ *(.rel.init)
+ *(.rel.text .rel.text.* .rel.gnu.linkonce.t.*)
+ .rel.text      0x00000000        0x0 rtld_start.o
+ *(.rel.fini)
+ *(.rel.rodata .rel.rodata.* .rel.gnu.linkonce.r.*)
+ *(.rel.data.rel.ro .rel.data.rel.ro.* .rel.gnu.linkonce.d.rel.ro.*)
+ .rel.data.rel.ro.local
+                0x00000e44       0xb0 rtld_start.o
+ *(.rel.data .rel.data.* .rel.gnu.linkonce.d.*)
+ .rel.data.rel.local
+                0x00000ef4       0x10 rtld_start.o
+ .rel.data.rel  0x00000f04       0x48 rtld_start.o
+ *(.rel.tdata .rel.tdata.* .rel.gnu.linkonce.td.*)
+ *(.rel.tbss .rel.tbss.* .rel.gnu.linkonce.tb.*)
+ *(.rel.ctors)
+ .rel.ctors     0x00000f4c        0x8 rtld_start.o
+ *(.rel.dtors)
+ *(.rel.got)
+ .rel.got       0x00000f54      0x120 rtld_start.o
+ *(.rel.bss .rel.bss.* .rel.gnu.linkonce.b.*)
+ *(.rel.ifunc)
+ .rel.ifunc     0x00000000        0x0 rtld_start.o
+
+.rel.plt        0x00001074        0x0
+ *(.rel.plt)
+ .rel.plt       0x00000000        0x0 rtld_start.o
+ *(.rel.iplt)
+
+.init
+ *(SORT(.init))
+
+.plt            0x00001080        0x0
+ *(.plt)
+ .plt           0x00000000        0x0 rtld_start.o
+ *(.iplt)
+
+.text           0x00001080     0x9b98
+                0x00001080                PROVIDE (__eprol, .)
+ *(.text)
+ .text          0x00001080       0x55 rtld_start.o
+                0x00001080                .rtld_start
+                0x000010b4                _rtld_bind_start
+ *fill*         0x000010d5        0xb 
+ .text          0x000010e0      0x359 mdreloc.o
+                0x000010e0                _rtld_setup_pltgot
+                0x00001100                _rtld_relocate_nonplt_self
+                0x00001170                _rtld_relocate_nonplt_objects
+                0x000012b0                _rtld_relocate_plt_lazy
+                0x000012e0                _rtld_bind
+                0x00001390                _rtld_relocate_plt_objects
+ *fill*         0x00001439        0x7 
+ .text          0x00001440     0x1bd7 rtld.o
+                0x00001440                _dlauxinfo
+                0x00001460                _rtld
+                0x00001cf0                _rtld_error
+                0x00001d40                _rtld_die
+                0x00001d90                _rtld_linkmap_add
+                0x00001e10                _rtld_objmain_sym
+                0x00001eb0                _rtld_exclusive_enter
+                0x000020a0                _rtld_exclusive_exit
+                0x000020b0                _rtld_debug_state
+                0x000020e0                dlerror
+                0x000020e0                __dlerror
+                0x00002100                _rtld_ref_dag
+                0x00002140                __dlclose
+                0x00002140                dlclose
+                0x00002410                dlopen
+                0x00002410                __dlopen
+                0x00002570                __dlsym
+                0x00002570                dlsym
+                0x00002860                dlvsym
+                0x00002860                __dlvsym
+                0x000028d0                __dladdr
+                0x000028d0                dladdr
+                0x000029c0                _rtld_shared_enter
+                0x000029d0                _rtld_shared_exit
+                0x000029e0                __dlinfo
+                0x000029e0                dlinfo
+                0x00002a90                __dl_iterate_phdr
+                0x00002a90                dl_iterate_phdr
+                0x00002b60                _rtld_linkmap_delete
+ *fill*         0x00003017        0x9 
+ .text          0x00003020      0x4a1 reloc.o
+                0x00003020                _rtld_do_copy_relocations
+                0x00003230                _rtld_relocate_objects
+                0x00003490                _rtld_resolve_ifunc
+ *fill*         0x000034c1        0xf 
+ .text          0x000034d0      0xe99 symbol.o
+                0x000034d0                _rtld_elf_hash
+                0x00003510                _rtld_symlook_list
+                0x00003610                _rtld_symlook_obj
+                0x00003930                _rtld_symlook_needed
+                0x00003b40                _rtld_combreloc_reset
+                0x00003b70                _rtld_find_symdef
+                0x00003db0                _rtld_symlook_default
+                0x000042f0                _rtld_find_plt_symdef
+ *fill*         0x00004369        0x7 
+ .text          0x00004370      0x5b7 xmalloc.o
+                0x00004370                xfree
+                0x000043b0                xcalloc
+                0x00004420                xmalloc
+                0x00004650                xrealloc
+                0x000047c0                xstrdup
+ *fill*         0x00004927        0x9 
+ .text          0x00004930      0x76d xprintf.o
+                0x00004930                xvsnprintf
+                0x00004cd0                xvprintf
+                0x00004d30                xprintf
+                0x00004d90                xsnprintf
+                0x00004dd0                xstrerror
+                0x00004e20                xerrx
+                0x00004eb0                xerr
+                0x00004f60                xwarn
+                0x00005020                xwarnx
+ *fill*         0x0000509d        0x3 
+ .text          0x000050a0        0x0 debug.o
+ .text          0x000050a0      0x976 map_object.o
+                0x000050a0                _rtld_map_object
+                0x000058b0                _rtld_obj_new
+                0x00005920                _rtld_obj_free
+ *fill*         0x00005a16        0xa 
+ .text          0x00005a20      0x956 load.o
+                0x00005a20                _rtld_objlist_push_head
+                0x00005a60                _rtld_objlist_push_tail
+                0x00005aa0                _rtld_objlist_find
+                0x00005ac0                _rtld_load_object
+                0x00005dc0                _rtld_load_needed_objects
+                0x000062e0                _rtld_preload
+ *fill*         0x00006376        0xa 
+ .text          0x00006380      0x31d search.o
+                0x00006380                _rtld_load_library
+ *fill*         0x0000669d        0x3 
+ .text          0x000066a0      0x63a headers.o
+                0x000066a0                _rtld_digest_dynamic
+                0x00006bb0                _rtld_digest_phdr
+ *fill*         0x00006cda        0x6 
+ .text          0x00006ce0      0xde1 paths.o
+                0x00006ce0                _rtld_add_paths
+                0x00006e50                _rtld_process_hints
+                0x00007800                _rtld_sysctl
+ *fill*         0x00007ac1        0xf 
+ .text          0x00007ad0      0x592 expand.o
+                0x00007ad0                _rtld_expand_path
+ *fill*         0x00008062        0x2 
+ .text          0x00008064        0x0 tls.o
+ *fill*         0x00008064        0xc 
+ .text          0x00008070      0x4b4 symver.o
+                0x00008070                _rtld_object_add_name
+                0x000080e0                _rtld_object_match_name
+                0x00008140                _rtld_verify_object_versions
+ *fill*         0x00008524        0xc 
+ .text          0x00008530       0x12 diagassert.o
+                0x00008530                __diagassert13
+ *fill*         0x00008542        0xe 
+ .text          0x00008550       0x27 exit.o
+                0x00008550                exit
+ *fill*         0x00008577        0x9 
+ .text          0x00008580       0xc7 /usr/lib/libc_pic.a(getegid.pico)
+                0x00008580                getegid
+ *fill*         0x00008647        0x9 
+ .text          0x00008650       0x5c /usr/lib/libc_pic.a(strsep.pico)
+                0x00008650                strsep
+                0x00008650                _strsep
+ .text          0x000086ac        0x0 /usr/lib/libc_pic.a(environ.pico)
+ *fill*         0x000086ac        0x4 
+ .text          0x000086b0       0xc7 /usr/lib/libc_pic.a(geteuid.pico)
+                0x000086b0                geteuid
+ *fill*         0x00008777        0x9 
+ .text          0x00008780       0x83 /usr/lib/libc_pic.a(strrchr.pico)
+                0x00008780                strrchr
+                0x00008780                rindex
+ *fill*         0x00008803        0xd 
+ .text          0x00008810       0xb8 /usr/lib/libc_pic.a(getuid.pico)
+                0x00008810                getuid
+ *fill*         0x000088c8        0x8 
+ .text          0x000088d0       0xb8 /usr/lib/libc_pic.a(getgid.pico)
+                0x000088d0                getgid
+ *fill*         0x00008988        0x8 
+ .text          0x00008990      0x853 /usr/lib/libc_pic.a(mmap.pico)
+                0x00008990                minix_mmap_for
+                0x00008aa0                minix_vfs_mmap
+                0x00008bb0                mmap
+                0x00008bb0                _mmap
+                0x00008cb0                _munmap
+                0x00008cb0                munmap
+                0x00008d80                vm_remap
+                0x00008e70                vm_remap_ro
+                0x00008f60                vm_unmap
+                0x00009030                vm_getphys
+                0x00009110                vm_getrefcount
+ *fill*         0x000091e3        0xd 
+ .text          0x000091f0       0x3f /usr/lib/libc_pic.a(memcmp.pico)
+                0x000091f0                memcmp
+ *fill*         0x0000922f        0x1 
+ .text          0x00009230       0xb4 /usr/lib/libc_pic.a(strncmp.pico)
+                0x00009230                strncmp
+ *fill*         0x000092e4        0xc 
+ .text          0x000092f0       0xca /usr/lib/libc_pic.a(abort.pico)
+                0x000092f0                abort
+ *fill*         0x000093ba        0x6 
+ .text          0x000093c0       0xa7 /usr/lib/libc_pic.a(signal.pico)
+                0x000093c0                signal
+                0x000093c0                _signal
+ *fill*         0x00009467        0x9 
+ .text          0x00009470       0x3b /usr/lib/libc_pic.a(raise.pico)
+                0x00009470                raise
+ *fill*         0x000094ab        0x1 
+ .text          0x000094ac       0x9f /usr/lib/libc_pic.a(udivdi3.pico)
+                0x000094ac                __udivdi3
+ *fill*         0x0000954b        0x5 
+ .text          0x00009550       0xc2 /usr/lib/libc_pic.a(_exit.pico)
+                0x00009550                _Exit
+                0x00009550                _exit
+ *fill*         0x00009612        0xe 
+ .text          0x00009620       0xd7 /usr/lib/libc_pic.a(sigaction.pico)
+                0x00009620                __sigaction14
+                0x00009620                sigaction
+ *fill*         0x000096f7        0x9 
+ .text          0x00009700      0x112 /usr/lib/libc_pic.a(open.pico)
+                0x00009700                open
+ *fill*         0x00009812        0xe 
+ .text          0x00009820       0x46 /usr/lib/libc_pic.a(loadname.pico)
+                0x00009820                _loadname
+ *fill*         0x00009866        0xa 
+ .text          0x00009870       0xc6 /usr/lib/libc_pic.a(kill.pico)
+                0x00009870                kill
+                0x00009870                _kill
+ *fill*         0x00009936        0xa 
+ .text          0x00009940       0xb8 /usr/lib/libc_pic.a(getpid.pico)
+                0x00009940                getpid
+ *fill*         0x000099f8        0x8 
+ .text          0x00009a00       0x6d /usr/lib/libc_pic.a(strcpy.pico)
+                0x00009a00                strcpy
+ *fill*         0x00009a6d        0x3 
+ .text          0x00009a70      0x402 /usr/lib/libc_pic.a(sysctl.pico)
+                0x00009a70                sysctl
+                0x00009a70                _sysctl
+ *fill*         0x00009e72        0xe 
+ .text          0x00009e80       0x16 /usr/lib/libc_pic.a(__sigreturn.pico)
+                0x00009e80                __sigreturn
+ *fill*         0x00009e96        0xa 
+ .text          0x00009ea0      0x114 /usr/lib/libc_pic.a(__sysctl.pico)
+                0x00009ea0                __sysctl
+ *fill*         0x00009fb4        0xc 
+ .text          0x00009fc0       0xd5 /usr/lib/libc_pic.a(write.pico)
+                0x00009fc0                write
+ *fill*         0x0000a095        0xb 
+ .text          0x0000a0a0      0x287 /usr/lib/libc_pic.a(stat.pico)
+                0x0000a0a0                _stat
+                0x0000a0a0                stat
+                0x0000a0a0                __stat50
+                0x0000a180                __fstat50
+                0x0000a180                _fstat
+                0x0000a180                fstat
+                0x0000a250                lstat
+                0x0000a250                _lstat
+                0x0000a250                __lstat50
+ *fill*         0x0000a327        0x9 
+ .text          0x0000a330      0x145 /usr/lib/libc_pic.a(sigreturn.pico)
+                0x0000a330                sigreturn
+ *fill*         0x0000a475        0xb 
+ .text          0x0000a480       0xd5 /usr/lib/libc_pic.a(read.pico)
+                0x0000a480                read
+                0x0000a480                _read
+ *fill*         0x0000a555        0xb 
+ .text          0x0000a560       0xc7 /usr/lib/libc_pic.a(close.pico)
+                0x0000a560                close
+ *fill*         0x0000a627        0x9 
+ .text          0x0000a630       0x47 /usr/lib/libc_pic.a(memset.pico)
+                0x0000a630                memset
+ *fill*         0x0000a677        0x9 
+ .text          0x0000a680       0x3e /usr/lib/libc_pic.a(memcpy.pico)
+                0x0000a680                memcpy
+ *fill*         0x0000a6be        0x2 
+ .text          0x0000a6c0       0x54 /usr/lib/libc_pic.a(strncpy.pico)
+                0x0000a6c0                strncpy
+ *fill*         0x0000a714        0xc 
+ .text          0x0000a720       0x61 /usr/lib/libc_pic.a(strlcpy.pico)
+                0x0000a720                _strlcpy
+                0x0000a720                strlcpy
+ *fill*         0x0000a781        0xf 
+ .text          0x0000a790      0x13c /usr/lib/libc_pic.a(sigprocmask.pico)
+                0x0000a790                __sigprocmask14
+                0x0000a790                sigprocmask
+ *fill*         0x0000a8cc        0x4 
+ .text          0x0000a8d0       0x4b /usr/lib/libc_pic.a(strlen.pico)
+                0x0000a8d0                strlen
+ *fill*         0x0000a91b        0x5 
+ .text          0x0000a920       0x8a /usr/lib/libc_pic.a(strchr.pico)
+                0x0000a920                index
+                0x0000a920                strchr
+ *fill*         0x0000a9aa        0x2 
+ .text          0x0000a9ac        0x0 /usr/lib/libc_pic.a(ctype_.pico)
+ *fill*         0x0000a9ac        0x4 
+ .text          0x0000a9b0       0x5b /usr/lib/libc_pic.a(syscall.pico)
+                0x0000a9b0                syscall
+                0x0000a9b0                _syscall
+ *fill*         0x0000aa0b        0x5 
+ .text          0x0000aa10       0x79 /usr/lib/libc_pic.a(strcmp.pico)
+                0x0000aa10                strcmp
+ *fill*         0x0000aa89        0x7 
+ .text          0x0000aa90       0x17 /usr/lib/libc_pic.a(_errno.pico)
+                0x0000aa90                __errno
+ *fill*         0x0000aaa7        0x9 
+ .text          0x0000aab0       0x78 /usr/lib/libc_pic.a(init.pico)
+                0x0000aab0                __minix_init
+ *fill*         0x0000ab28        0x8 
+ .text          0x0000ab30       0x1d /usr/lib/libc_pic.a(ipc_minix_kerninfo.pico)
+                0x0000ab30                ipc_minix_kerninfo
+ *fill*         0x0000ab4d        0x3 
+ .text          0x0000ab50       0xb4 /usr/lib/libc_pic.a(_ipc.pico)
+                0x0000ab50                _ipc_send_intr
+                0x0000ab70                _ipc_receive_intr
+                0x0000ab90                _ipc_sendrec_intr
+                0x0000abb0                _ipc_notify_intr
+                0x0000abd0                _ipc_sendnb_intr
+                0x0000abf0                _ipc_senda_intr
+ *fill*         0x0000ac04        0xc 
+ .text          0x0000ac10        0x7 /usr/lib/libc_pic.a(_do_kernel_call_intr.pico)
+                0x0000ac10                _do_kernel_call_intr
+ *fill*         0x0000ac17        0x1 
+ .text          0x0000ac18        0x0 /usr/lib/libc_pic.a(errno.pico)
+ *(.text.unlikely .text.*_unlikely)
+ *(.text.exit .text.exit.*)
+ *(.text.startup .text.startup.*)
+ *(.text.hot .text.hot.*)
+ *(.stub .text.* .gnu.linkonce.t.*)
+ *(.gnu.warning)
+
+.fini
+ *(SORT(.fini))
+                0x0000ac18                PROVIDE (__etext, .)
+                0x0000ac18                PROVIDE (_etext, .)
+                0x0000ac18                PROVIDE (etext, .)
+
+.rodata         0x0000ac18     0x13a6
+ *(.rodata .rodata.* .gnu.linkonce.r.*)
+ .rodata        0x0000ac18       0x24 mdreloc.o
+ .rodata.str1.1
+                0x0000ac3c       0x6e mdreloc.o
+ *fill*         0x0000acaa        0x2 
+ .rodata        0x0000acac       0x93 rtld.o
+                0x0000acf4                _rtld_path
+ .rodata.str1.1
+                0x0000ad3f      0x101 rtld.o
+                                0x104 (size before relaxing)
+ .rodata.str1.1
+                0x0000ae40       0xaf reloc.o
+ .rodata.str1.1
+                0x0000aeef       0xdf symbol.o
+                                0x109 (size before relaxing)
+ .rodata.str1.1
+                0x0000afce       0x5e xmalloc.o
+                                 0x61 (size before relaxing)
+ .rodata        0x0000b02c       0x50 xprintf.o
+ .rodata.str1.1
+                0x0000b07c       0x30 xprintf.o
+                                 0x32 (size before relaxing)
+ .rodata        0x0000b0ac       0x18 map_object.o
+ .rodata.str1.1
+                0x0000b0c4      0x18a map_object.o
+ *fill*         0x0000b24e        0x2 
+ .rodata        0x0000b250       0x18 load.o
+ .rodata.str1.1
+                0x0000b268       0xd5 load.o
+                                 0xd8 (size before relaxing)
+ .rodata.str1.1
+                0x0000b33d       0x4f search.o
+                                 0x52 (size before relaxing)
+ .rodata        0x0000b38c       0x74 headers.o
+ .rodata.str1.1
+                0x0000b400       0xec paths.o
+ .rodata        0x0000b4ec        0x4 paths.o
+ .rodata.str1.1
+                0x0000b4f0       0x77 expand.o
+ .rodata.str1.1
+                0x0000b567       0xe7 symver.o
+ .rodata.str1.1
+                0x0000b64e      0x66b /usr/lib/libc_pic.a(sysctl.pico)
+ *fill*         0x0000bcb9        0x1 
+ .rodata        0x0000bcba      0x304 /usr/lib/libc_pic.a(ctype_.pico)
+                0x0000bcba                _C_ctype_
+                0x0000bcba                _C_compat_bsdctype
+                0x0000bdbc                _C_ctype_tab_
+
+.rodata1
+ *(.rodata1)
+
+.eh_frame_hdr   0x0000bfc0      0x3e4
+ *(.eh_frame_hdr)
+ .eh_frame_hdr  0x0000bfc0      0x3e4 mdreloc.o
+
+.eh_frame       0x0000c3a4      0xf84
+ *(.eh_frame)
+ .eh_frame      0x00000000        0x0 rtld_start.o
+ .eh_frame      0x0000c3a4       0xd8 mdreloc.o
+ .eh_frame      0x0000c47c      0x358 rtld.o
+                                0x370 (size before relaxing)
+ .eh_frame      0x0000c7d4       0x90 reloc.o
+                                 0xa8 (size before relaxing)
+ .eh_frame      0x0000c864      0x10c symbol.o
+                                0x124 (size before relaxing)
+ .eh_frame      0x0000c970       0xf8 xmalloc.o
+                                0x110 (size before relaxing)
+ .eh_frame      0x0000ca68      0x13c xprintf.o
+                                0x154 (size before relaxing)
+ .eh_frame      0x0000cba4       0x6c map_object.o
+                                 0x84 (size before relaxing)
+ .eh_frame      0x0000cc10       0xc4 load.o
+                                 0xdc (size before relaxing)
+ .eh_frame      0x0000ccd4       0x58 search.o
+                                 0x70 (size before relaxing)
+ .eh_frame      0x0000cd2c       0x50 headers.o
+                                 0x68 (size before relaxing)
+ .eh_frame      0x0000cd7c       0x6c paths.o
+                                 0x84 (size before relaxing)
+ .eh_frame      0x0000cde8       0x28 expand.o
+                                 0x40 (size before relaxing)
+ .eh_frame      0x0000ce10       0x74 symver.o
+                                 0x8c (size before relaxing)
+ .eh_frame      0x0000ce84       0x18 diagassert.o
+                                 0x30 (size before relaxing)
+ .eh_frame      0x0000ce9c       0x20 exit.o
+                                 0x38 (size before relaxing)
+ .eh_frame      0x0000cebc       0x1c /usr/lib/libc_pic.a(getegid.pico)
+                                 0x34 (size before relaxing)
+ .eh_frame      0x0000ced8       0x20 /usr/lib/libc_pic.a(strsep.pico)
+                                 0x38 (size before relaxing)
+ .eh_frame      0x0000cef8       0x1c /usr/lib/libc_pic.a(geteuid.pico)
+                                 0x34 (size before relaxing)
+ .eh_frame      0x0000cf14       0x1c /usr/lib/libc_pic.a(getuid.pico)
+                                 0x34 (size before relaxing)
+ .eh_frame      0x0000cf30       0x1c /usr/lib/libc_pic.a(getgid.pico)
+                                 0x34 (size before relaxing)
+ .eh_frame      0x0000cf4c      0x104 /usr/lib/libc_pic.a(mmap.pico)
+                                0x11c (size before relaxing)
+ .eh_frame      0x0000d050       0x20 /usr/lib/libc_pic.a(abort.pico)
+                                 0x38 (size before relaxing)
+ .eh_frame      0x0000d070       0x20 /usr/lib/libc_pic.a(signal.pico)
+                                 0x38 (size before relaxing)
+ .eh_frame      0x0000d090       0x20 /usr/lib/libc_pic.a(raise.pico)
+                                 0x38 (size before relaxing)
+ .eh_frame      0x0000d0b0       0x1c /usr/lib/libc_pic.a(_exit.pico)
+                                 0x34 (size before relaxing)
+ .eh_frame      0x0000d0cc       0x1c /usr/lib/libc_pic.a(sigaction.pico)
+                                 0x34 (size before relaxing)
+ .eh_frame      0x0000d0e8       0x20 /usr/lib/libc_pic.a(open.pico)
+                                 0x38 (size before relaxing)
+ .eh_frame      0x0000d108       0x20 /usr/lib/libc_pic.a(loadname.pico)
+                                 0x38 (size before relaxing)
+ .eh_frame      0x0000d128       0x1c /usr/lib/libc_pic.a(kill.pico)
+                                 0x34 (size before relaxing)
+ .eh_frame      0x0000d144       0x1c /usr/lib/libc_pic.a(getpid.pico)
+                                 0x34 (size before relaxing)
+ .eh_frame      0x0000d160       0x20 /usr/lib/libc_pic.a(sysctl.pico)
+                                 0x38 (size before relaxing)
+ .eh_frame      0x0000d180       0x20 /usr/lib/libc_pic.a(__sysctl.pico)
+                                 0x38 (size before relaxing)
+ .eh_frame      0x0000d1a0       0x1c /usr/lib/libc_pic.a(write.pico)
+                                 0x34 (size before relaxing)
+ .eh_frame      0x0000d1bc       0x5c /usr/lib/libc_pic.a(stat.pico)
+                                 0x74 (size before relaxing)
+ .eh_frame      0x0000d218       0x20 /usr/lib/libc_pic.a(sigreturn.pico)
+                                 0x38 (size before relaxing)
+ .eh_frame      0x0000d238       0x1c /usr/lib/libc_pic.a(read.pico)
+                                 0x34 (size before relaxing)
+ .eh_frame      0x0000d254       0x1c /usr/lib/libc_pic.a(close.pico)
+                                 0x34 (size before relaxing)
+ .eh_frame      0x0000d270       0x20 /usr/lib/libc_pic.a(strncpy.pico)
+                                 0x38 (size before relaxing)
+ .eh_frame      0x0000d290       0x20 /usr/lib/libc_pic.a(strlcpy.pico)
+                                 0x38 (size before relaxing)
+ .eh_frame      0x0000d2b0       0x1c /usr/lib/libc_pic.a(sigprocmask.pico)
+                                 0x34 (size before relaxing)
+ .eh_frame      0x0000d2cc       0x20 /usr/lib/libc_pic.a(syscall.pico)
+                                 0x38 (size before relaxing)
+ .eh_frame      0x0000d2ec       0x1c /usr/lib/libc_pic.a(_errno.pico)
+                                 0x34 (size before relaxing)
+ .eh_frame      0x0000d308       0x20 /usr/lib/libc_pic.a(init.pico)
+                                 0x38 (size before relaxing)
+
+.note.netbsd.ident
+                0x0000d328       0x18
+ .note.netbsd.ident
+                0x0000d328       0x18 rtld.o
+
+.note.netbsd.pax
+                0x0000d340       0x14
+ .note.netbsd.pax
+                0x0000d340       0x14 rtld.o
+
+.gcc_except_table
+ *(.gcc_except_table .gcc_except_table.*)
+
+.exception_ranges
+ *(.exception_ranges .exception_ranges*)
+                0x0000d354                . = (ALIGN (0x1000) - ((0x1000 - .) & 0xfff))
+                0x0000e000                . = DATA_SEGMENT_ALIGN (0x1000, 0x1000)
+
+.eh_frame
+ *(.eh_frame)
+
+.gcc_except_table
+ *(.gcc_except_table .gcc_except_table.*)
+
+.exception_ranges
+ *(.exception_ranges .exception_ranges*)
+
+.tdata
+ *(.tdata .tdata.* .gnu.linkonce.td.*)
+
+.tbss
+ *(.tbss .tbss.* .gnu.linkonce.tb.*)
+ *(.tcommon)
+
+.preinit_array
+ *(.preinit_array)
+
+.init_array
+ *(SORT(.init_array.*))
+ *(.init_array)
+
+.fini_array
+ *(SORT(.fini_array.*))
+ *(.fini_array)
+
+.ctors          0x0000e000        0x4
+ *crtbegin.o(.ctors)
+ *crtbegin?.o(.ctors)
+ *(EXCLUDE_FILE(*crtend?.o *crtend.o) .ctors)
+ .ctors         0x0000e000        0x4 /usr/lib/libc_pic.a(init.pico)
+ *(SORT(.ctors.*))
+ *(.ctors)
+
+.dtors
+ *crtbegin.o(.dtors)
+ *crtbegin?.o(.dtors)
+ *(EXCLUDE_FILE(*crtend?.o *crtend.o) .dtors)
+ *(SORT(.dtors.*))
+ *(.dtors)
+
+.jcr
+ *(.jcr)
+
+.data.rel.ro    0x0000e004      0x7e0
+ *(.data.rel.ro.local* .gnu.linkonce.d.rel.ro.local.*)
+ .data.rel.ro.local
+                0x0000e004      0x7e0 /usr/lib/libc_pic.a(sysctl.pico)
+ *(.data.rel.ro .data.rel.ro.* .gnu.linkonce.d.rel.ro.*)
+
+.dynamic        0x0000e7e4       0x78
+ *(.dynamic)
+ .dynamic       0x0000e7e4       0x78 rtld_start.o
+                0x0000e7e4                _DYNAMIC
+
+.got            0x0000e85c       0x90
+ *(.got)
+ .got           0x0000e85c       0x90 rtld_start.o
+ *(.igot)
+                0x0000e8ec                . = DATA_SEGMENT_RELRO_END (., (SIZEOF (.got.plt) >= 0xc)?0xc:0x0)
+
+.got.plt        0x0000e8ec        0xc
+ *(.got.plt)
+ .got.plt       0x0000e8ec        0xc rtld_start.o
+                0x0000e8ec                _GLOBAL_OFFSET_TABLE_
+ *(.igot.plt)
+
+.data           0x0000e8f8       0x60
+ *(.data .data.* .gnu.linkonce.d.*)
+ .data          0x0000e8f8        0x0 rtld_start.o
+ .data          0x0000e8f8        0x0 mdreloc.o
+ .data          0x0000e8f8       0x10 rtld.o
+                0x0000e8f8                _rtld_sym_zero
+ .data          0x0000e908        0x0 reloc.o
+ .data          0x0000e908        0x0 symbol.o
+ .data          0x0000e908        0x0 xmalloc.o
+ .data          0x0000e908        0x0 xprintf.o
+ .data          0x0000e908        0x0 debug.o
+ .data          0x0000e908        0x0 map_object.o
+ .data          0x0000e908        0x0 load.o
+ .data.rel.local
+                0x0000e908       0x10 load.o
+                0x0000e908                _rtld_list_main
+                0x0000e910                _rtld_list_global
+ .data          0x0000e918        0x0 search.o
+ .data          0x0000e918        0x0 headers.o
+ .data          0x0000e918        0x0 paths.o
+ .data          0x0000e918       0x18 expand.o
+ .data          0x0000e930        0x0 tls.o
+ .data          0x0000e930        0x0 symver.o
+ .data          0x0000e930        0x0 diagassert.o
+ .data          0x0000e930        0x0 exit.o
+ .data          0x0000e930        0x0 /usr/lib/libc_pic.a(getegid.pico)
+ .data          0x0000e930        0x0 /usr/lib/libc_pic.a(strsep.pico)
+ .data          0x0000e930        0x4 /usr/lib/libc_pic.a(environ.pico)
+                0x0000e930                environ
+ .data          0x0000e934        0x0 /usr/lib/libc_pic.a(geteuid.pico)
+ .data          0x0000e934        0x0 /usr/lib/libc_pic.a(strrchr.pico)
+ .data          0x0000e934        0x0 /usr/lib/libc_pic.a(getuid.pico)
+ .data          0x0000e934        0x0 /usr/lib/libc_pic.a(getgid.pico)
+ .data          0x0000e934        0x0 /usr/lib/libc_pic.a(mmap.pico)
+ .data          0x0000e934        0x0 /usr/lib/libc_pic.a(memcmp.pico)
+ .data          0x0000e934        0x0 /usr/lib/libc_pic.a(strncmp.pico)
+ .data          0x0000e934        0x0 /usr/lib/libc_pic.a(abort.pico)
+ .data          0x0000e934        0x0 /usr/lib/libc_pic.a(signal.pico)
+ .data          0x0000e934        0x0 /usr/lib/libc_pic.a(raise.pico)
+ .data          0x0000e934        0x0 /usr/lib/libc_pic.a(udivdi3.pico)
+ .data          0x0000e934        0x0 /usr/lib/libc_pic.a(_exit.pico)
+ .data          0x0000e934        0x0 /usr/lib/libc_pic.a(sigaction.pico)
+ .data          0x0000e934        0x0 /usr/lib/libc_pic.a(open.pico)
+ .data          0x0000e934        0x0 /usr/lib/libc_pic.a(loadname.pico)
+ .data          0x0000e934        0x0 /usr/lib/libc_pic.a(kill.pico)
+ .data          0x0000e934        0x0 /usr/lib/libc_pic.a(getpid.pico)
+ .data          0x0000e934        0x0 /usr/lib/libc_pic.a(strcpy.pico)
+ .data          0x0000e934        0x0 /usr/lib/libc_pic.a(sysctl.pico)
+ .data          0x0000e934        0x0 /usr/lib/libc_pic.a(__sigreturn.pico)
+ .data          0x0000e934        0x0 /usr/lib/libc_pic.a(__sysctl.pico)
+ .data          0x0000e934        0x0 /usr/lib/libc_pic.a(write.pico)
+ .data          0x0000e934        0x0 /usr/lib/libc_pic.a(stat.pico)
+ .data          0x0000e934        0x0 /usr/lib/libc_pic.a(sigreturn.pico)
+ .data          0x0000e934        0x0 /usr/lib/libc_pic.a(read.pico)
+ .data          0x0000e934        0x0 /usr/lib/libc_pic.a(close.pico)
+ .data          0x0000e934        0x0 /usr/lib/libc_pic.a(memset.pico)
+ .data          0x0000e934        0x0 /usr/lib/libc_pic.a(memcpy.pico)
+ .data          0x0000e934        0x0 /usr/lib/libc_pic.a(strncpy.pico)
+ .data          0x0000e934        0x0 /usr/lib/libc_pic.a(strlcpy.pico)
+ .data          0x0000e934        0x0 /usr/lib/libc_pic.a(sigprocmask.pico)
+ .data          0x0000e934        0x0 /usr/lib/libc_pic.a(strlen.pico)
+ .data          0x0000e934        0x0 /usr/lib/libc_pic.a(strchr.pico)
+ .data          0x0000e934        0x0 /usr/lib/libc_pic.a(ctype_.pico)
+ .data.rel      0x0000e934        0x8 /usr/lib/libc_pic.a(ctype_.pico)
+                0x0000e934                _ctype_
+                0x0000e938                _ctype_tab_
+ .data          0x0000e93c        0x0 /usr/lib/libc_pic.a(syscall.pico)
+ .data          0x0000e93c        0x0 /usr/lib/libc_pic.a(strcmp.pico)
+ .data          0x0000e93c        0x0 /usr/lib/libc_pic.a(_errno.pico)
+ .data          0x0000e93c        0x0 /usr/lib/libc_pic.a(init.pico)
+ .data.rel      0x0000e93c       0x1c /usr/lib/libc_pic.a(init.pico)
+                0x0000e93c                _minix_ipcvecs
+ .data          0x0000e958        0x0 /usr/lib/libc_pic.a(ipc_minix_kerninfo.pico)
+ .data          0x0000e958        0x0 /usr/lib/libc_pic.a(_ipc.pico)
+ .data          0x0000e958        0x0 /usr/lib/libc_pic.a(_do_kernel_call_intr.pico)
+ .data          0x0000e958        0x0 /usr/lib/libc_pic.a(errno.pico)
+
+.data1
+ *(.data1)
+                0x0000e958                _edata = .
+                0x0000e958                PROVIDE (edata, .)
+                0x0000e958                . = .
+                0x0000e958                __bss_start = .
+
+.bss            0x0000e960      0x4f4
+ *(.dynbss)
+ .dynbss        0x00000000        0x0 rtld_start.o
+ *(.bss .bss.* .gnu.linkonce.b.*)
+ .bss           0x0000e960        0x0 rtld_start.o
+ .bss           0x0000e960        0x0 mdreloc.o
+ .bss           0x0000e960      0x208 rtld.o
+ .bss           0x0000eb68        0x0 reloc.o
+ .bss           0x0000eb68       0x10 symbol.o
+ .bss           0x0000eb78       0x8c xmalloc.o
+ .bss           0x0000ec04       0x80 xprintf.o
+ .bss           0x0000ec84        0x0 debug.o
+ .bss           0x0000ec84        0x0 map_object.o
+ .bss           0x0000ec84        0x0 load.o
+ .bss           0x0000ec84        0x0 search.o
+ .bss           0x0000ec84        0x0 headers.o
+ .bss           0x0000ec84        0x0 paths.o
+ .bss           0x0000ec84        0x0 expand.o
+ .bss           0x0000ec84        0x0 tls.o
+ .bss           0x0000ec84        0x0 symver.o
+ .bss           0x0000ec84        0x0 diagassert.o
+ .bss           0x0000ec84        0x0 exit.o
+ .bss           0x0000ec84        0x0 /usr/lib/libc_pic.a(getegid.pico)
+ .bss           0x0000ec84        0x0 /usr/lib/libc_pic.a(strsep.pico)
+ .bss           0x0000ec84        0x0 /usr/lib/libc_pic.a(environ.pico)
+ .bss           0x0000ec84        0x0 /usr/lib/libc_pic.a(geteuid.pico)
+ .bss           0x0000ec84        0x0 /usr/lib/libc_pic.a(strrchr.pico)
+ .bss           0x0000ec84        0x0 /usr/lib/libc_pic.a(getuid.pico)
+ .bss           0x0000ec84        0x0 /usr/lib/libc_pic.a(getgid.pico)
+ .bss           0x0000ec84        0x0 /usr/lib/libc_pic.a(mmap.pico)
+ .bss           0x0000ec84        0x0 /usr/lib/libc_pic.a(memcmp.pico)
+ .bss           0x0000ec84        0x0 /usr/lib/libc_pic.a(strncmp.pico)
+ .bss           0x0000ec84        0x1 /usr/lib/libc_pic.a(abort.pico)
+ *fill*         0x0000ec85        0x3 
+ .bss           0x0000ec88        0x0 /usr/lib/libc_pic.a(signal.pico)
+ .bss           0x0000ec88        0x0 /usr/lib/libc_pic.a(raise.pico)
+ .bss           0x0000ec88        0x0 /usr/lib/libc_pic.a(udivdi3.pico)
+ .bss           0x0000ec88        0x0 /usr/lib/libc_pic.a(_exit.pico)
+ .bss           0x0000ec88        0x0 /usr/lib/libc_pic.a(sigaction.pico)
+ .bss           0x0000ec88        0x0 /usr/lib/libc_pic.a(open.pico)
+ .bss           0x0000ec88        0x0 /usr/lib/libc_pic.a(loadname.pico)
+ .bss           0x0000ec88        0x0 /usr/lib/libc_pic.a(kill.pico)
+ .bss           0x0000ec88        0x0 /usr/lib/libc_pic.a(getpid.pico)
+ .bss           0x0000ec88        0x0 /usr/lib/libc_pic.a(strcpy.pico)
+ .bss           0x0000ec88        0x0 /usr/lib/libc_pic.a(sysctl.pico)
+ .bss           0x0000ec88        0x0 /usr/lib/libc_pic.a(__sigreturn.pico)
+ .bss           0x0000ec88        0x0 /usr/lib/libc_pic.a(__sysctl.pico)
+ .bss           0x0000ec88        0x0 /usr/lib/libc_pic.a(write.pico)
+ .bss           0x0000ec88        0x0 /usr/lib/libc_pic.a(stat.pico)
+ *fill*         0x0000ec88        0x8 
+ .bss           0x0000ec90       0x40 /usr/lib/libc_pic.a(sigreturn.pico)
+ .bss           0x0000ecd0        0x0 /usr/lib/libc_pic.a(read.pico)
+ .bss           0x0000ecd0        0x0 /usr/lib/libc_pic.a(close.pico)
+ .bss           0x0000ecd0        0x0 /usr/lib/libc_pic.a(memset.pico)
+ .bss           0x0000ecd0        0x0 /usr/lib/libc_pic.a(memcpy.pico)
+ .bss           0x0000ecd0        0x0 /usr/lib/libc_pic.a(strncpy.pico)
+ .bss           0x0000ecd0        0x0 /usr/lib/libc_pic.a(strlcpy.pico)
+ .bss           0x0000ecd0        0x0 /usr/lib/libc_pic.a(sigprocmask.pico)
+ .bss           0x0000ecd0        0x0 /usr/lib/libc_pic.a(strlen.pico)
+ .bss           0x0000ecd0        0x0 /usr/lib/libc_pic.a(strchr.pico)
+ .bss           0x0000ecd0        0x0 /usr/lib/libc_pic.a(ctype_.pico)
+ .bss           0x0000ecd0        0x0 /usr/lib/libc_pic.a(syscall.pico)
+ .bss           0x0000ecd0        0x0 /usr/lib/libc_pic.a(strcmp.pico)
+ .bss           0x0000ecd0        0x0 /usr/lib/libc_pic.a(_errno.pico)
+ .bss           0x0000ecd0        0x4 /usr/lib/libc_pic.a(init.pico)
+                0x0000ecd0                _minix_kerninfo
+ .bss           0x0000ecd4        0x0 /usr/lib/libc_pic.a(ipc_minix_kerninfo.pico)
+ .bss           0x0000ecd4        0x0 /usr/lib/libc_pic.a(_ipc.pico)
+ .bss           0x0000ecd4        0x0 /usr/lib/libc_pic.a(_do_kernel_call_intr.pico)
+ .bss           0x0000ecd4        0x0 /usr/lib/libc_pic.a(errno.pico)
+ *(COMMON)
+ COMMON         0x0000ecd4      0x161 rtld.o
+                0x0000ecd4                _rtld_objlist
+                0x0000ecd8                _rtld_objtail
+                0x0000ecdc                _rtld_objcount
+                0x0000ece0                _rtld_default_paths
+                0x0000ece4                __progname
+                0x0000ece8                _rtld_objgen
+                0x0000ecec                _rtld_objself
+                0x0000ee10                _rtld_xforms
+                0x0000ee14                _rtld_paths
+                0x0000ee18                _rtld_pagesz
+                0x0000ee1c                _rtld_debug
+                0x0000ee2c                _rtld_objmain
+                0x0000ee30                _rtld_objloads
+                0x0000ee34                _rtld_trust
+ *fill*         0x0000ee35        0x3 
+ COMMON         0x0000ee38        0x4 search.o
+                0x0000ee38                _rtld_invalid_paths
+ COMMON         0x0000ee3c        0x4 exit.o
+                0x0000ee3c                __cleanup
+ COMMON         0x0000ee40       0x10 /usr/lib/libc_pic.a(signal.pico)
+                0x0000ee40                __sigintr
+ COMMON         0x0000ee50        0x4 /usr/lib/libc_pic.a(errno.pico)
+                0x0000ee50                errno
+                0x0000ee54                . = ALIGN ((. != 0x0)?0x4:0x1)
+                0x0000ee54                . = ALIGN (0x4)
+                0x0000ee54                . = ALIGN (0x4)
+                0x0000ee54                _end = .
+                0x0000ee54                PROVIDE (end, .)
+                0x0000ee54                . = DATA_SEGMENT_END (.)
+
+.stab
+ *(.stab)
+
+.stabstr
+ *(.stabstr)
+
+.stab.excl
+ *(.stab.excl)
+
+.stab.exclstr
+ *(.stab.exclstr)
+
+.stab.index
+ *(.stab.index)
+
+.stab.indexstr
+ *(.stab.indexstr)
+
+.comment        0x00000000       0x2f
+ *(.comment)
+ .comment       0x00000000       0x2f mdreloc.o
+                                 0x30 (size before relaxing)
+ .comment       0x00000000       0x30 rtld.o
+ .comment       0x00000000       0x30 reloc.o
+ .comment       0x00000000       0x30 symbol.o
+ .comment       0x00000000       0x30 xmalloc.o
+ .comment       0x00000000       0x30 xprintf.o
+ .comment       0x00000000       0x30 debug.o
+ .comment       0x00000000       0x30 map_object.o
+ .comment       0x00000000       0x30 load.o
+ .comment       0x00000000       0x30 search.o
+ .comment       0x00000000       0x30 headers.o
+ .comment       0x00000000       0x30 paths.o
+ .comment       0x00000000       0x30 expand.o
+ .comment       0x00000000       0x30 tls.o
+ .comment       0x00000000       0x30 symver.o
+ .comment       0x00000000       0x30 diagassert.o
+ .comment       0x00000000       0x30 exit.o
+ .comment       0x00000000       0x30 /usr/lib/libc_pic.a(getegid.pico)
+ .comment       0x00000000       0x30 /usr/lib/libc_pic.a(strsep.pico)
+ .comment       0x00000000       0x30 /usr/lib/libc_pic.a(environ.pico)
+ .comment       0x00000000       0x30 /usr/lib/libc_pic.a(geteuid.pico)
+ .comment       0x00000000       0x30 /usr/lib/libc_pic.a(getuid.pico)
+ .comment       0x00000000       0x30 /usr/lib/libc_pic.a(getgid.pico)
+ .comment       0x00000000       0x30 /usr/lib/libc_pic.a(mmap.pico)
+ .comment       0x00000000       0x30 /usr/lib/libc_pic.a(abort.pico)
+ .comment       0x00000000       0x30 /usr/lib/libc_pic.a(signal.pico)
+ .comment       0x00000000       0x30 /usr/lib/libc_pic.a(raise.pico)
+ .comment       0x00000000       0x30 /usr/lib/libc_pic.a(_exit.pico)
+ .comment       0x00000000       0x30 /usr/lib/libc_pic.a(sigaction.pico)
+ .comment       0x00000000       0x30 /usr/lib/libc_pic.a(open.pico)
+ .comment       0x00000000       0x30 /usr/lib/libc_pic.a(loadname.pico)
+ .comment       0x00000000       0x30 /usr/lib/libc_pic.a(kill.pico)
+ .comment       0x00000000       0x30 /usr/lib/libc_pic.a(getpid.pico)
+ .comment       0x00000000       0x30 /usr/lib/libc_pic.a(sysctl.pico)
+ .comment       0x00000000       0x30 /usr/lib/libc_pic.a(__sysctl.pico)
+ .comment       0x00000000       0x30 /usr/lib/libc_pic.a(write.pico)
+ .comment       0x00000000       0x30 /usr/lib/libc_pic.a(stat.pico)
+ .comment       0x00000000       0x30 /usr/lib/libc_pic.a(sigreturn.pico)
+ .comment       0x00000000       0x30 /usr/lib/libc_pic.a(read.pico)
+ .comment       0x00000000       0x30 /usr/lib/libc_pic.a(close.pico)
+ .comment       0x00000000       0x30 /usr/lib/libc_pic.a(strncpy.pico)
+ .comment       0x00000000       0x30 /usr/lib/libc_pic.a(strlcpy.pico)
+ .comment       0x00000000       0x30 /usr/lib/libc_pic.a(sigprocmask.pico)
+ .comment       0x00000000       0x30 /usr/lib/libc_pic.a(ctype_.pico)
+ .comment       0x00000000       0x30 /usr/lib/libc_pic.a(syscall.pico)
+ .comment       0x00000000       0x30 /usr/lib/libc_pic.a(_errno.pico)
+ .comment       0x00000000       0x30 /usr/lib/libc_pic.a(init.pico)
+ .comment       0x00000000       0x30 /usr/lib/libc_pic.a(errno.pico)
+
+.ident          0x00000000      0x395
+ .ident         0x00000000       0x3a mdreloc.o
+ .ident         0x0000003a       0x37 rtld.o
+ .ident         0x00000071       0x39 reloc.o
+ .ident         0x000000aa       0x38 symbol.o
+ .ident         0x000000e2       0x3d xmalloc.o
+ .ident         0x0000011f       0x75 xprintf.o
+ .ident         0x00000194       0x37 debug.o
+ .ident         0x000001cb       0x3e map_object.o
+ .ident         0x00000209       0x3a load.o
+ .ident         0x00000243       0x39 search.o
+ .ident         0x0000027c       0x3a headers.o
+ .ident         0x000002b6       0x38 paths.o
+ .ident         0x000002ee       0x38 expand.o
+ .ident         0x00000326       0x34 tls.o
+ .ident         0x0000035a       0x3b symver.o
+
+.debug
+ *(.debug)
+
+.line
+ *(.line)
+
+.debug_srcinfo
+ *(.debug_srcinfo)
+
+.debug_sfnames
+ *(.debug_sfnames)
+
+.debug_aranges
+ *(.debug_aranges)
+
+.debug_pubnames
+ *(.debug_pubnames)
+
+.debug_info
+ *(.debug_info .gnu.linkonce.wi.*)
+
+.debug_abbrev
+ *(.debug_abbrev)
+
+.debug_line
+ *(.debug_line)
+
+.debug_frame
+ *(.debug_frame)
+
+.debug_str
+ *(.debug_str)
+
+.debug_loc
+ *(.debug_loc)
+
+.debug_macinfo
+ *(.debug_macinfo)
+
+.debug_weaknames
+ *(.debug_weaknames)
+
+.debug_funcnames
+ *(.debug_funcnames)
+
+.debug_typenames
+ *(.debug_typenames)
+
+.debug_varnames
+ *(.debug_varnames)
+
+.debug_pubtypes
+ *(.debug_pubtypes)
+
+.debug_ranges
+ *(.debug_ranges)
+
+.debug_macro
+ *(.debug_macro)
+
+.gnu.attributes
+ *(.gnu.attributes)
+
+/DISCARD/
+ *(.note.GNU-stack)
+ *(.gnu_debuglink)
+ *(.gnu.lto_*)
+OUTPUT(ld.elf_so elf32-i386-minix)

@@ -1,0 +1,11 @@
+#!/bin/sh
+func()
+{
+    echo 'before break'
+    ${1}
+    echo 'after break'
+}
+
+echo 'before function'
+func "break" "break"  # don't rely on 'shift'
+echo 'after function'

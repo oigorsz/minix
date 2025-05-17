@@ -1,0 +1,4 @@
+#!/bin/sh
+echo 'before continue'
+continue
+echo 'after continue, return value:' 0

@@ -1,0 +1,11 @@
+#!/bin/sh
+echo 'before until'
+cond_='false false true'
+until ${cond_}
+do
+    cond_="${cond_#* }"
+    echo 'before return'
+return
+echo 'after return, return value:' 0
+done
+echo 'after until'

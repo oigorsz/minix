@@ -1,0 +1,4 @@
+#!/bin/sh
+echo 'before break'
+break
+echo 'after break, return value:' 0

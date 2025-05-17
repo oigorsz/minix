@@ -1,0 +1,8 @@
+#!/bin/sh
+{
+    echo 'compound start'
+    echo 'before continue'
+continue
+echo 'after continue, return value:' 0;
+    echo 'compound end'
+}

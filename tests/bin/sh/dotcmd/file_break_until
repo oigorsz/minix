@@ -1,0 +1,4 @@
+#!/bin/sh
+echo 'before dotcmd'
+. "break_until"
+echo 'after dotcmd, return value:' 0

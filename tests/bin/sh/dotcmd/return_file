@@ -1,0 +1,4 @@
+#!/bin/sh
+echo 'before return'
+return
+echo 'after return, return value:' 0

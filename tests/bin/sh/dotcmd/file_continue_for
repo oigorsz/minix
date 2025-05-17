@@ -1,0 +1,4 @@
+#!/bin/sh
+echo 'before dotcmd'
+. "continue_for"
+echo 'after dotcmd, return value:' 0

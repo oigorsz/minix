@@ -1,0 +1,4 @@
+#!/bin/sh
+echo 'before dotcmd'
+. "return_file"
+echo 'after dotcmd, return value:' 0

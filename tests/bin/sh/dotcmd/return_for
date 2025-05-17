@@ -1,0 +1,9 @@
+#!/bin/sh
+echo 'before for'
+for i_ in 1 2
+do
+    echo 'before return'
+return
+echo 'after return, return value:' 0
+done
+echo 'after for'

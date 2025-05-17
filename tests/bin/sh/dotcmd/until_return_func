@@ -1,0 +1,11 @@
+#!/bin/sh
+echo 'before until'
+cond_dotcmd='false false true'
+until ${cond_dotcmd}
+do
+    cond_dotcmd="${cond_dotcmd#* }"
+    echo 'before dotcmd'
+. "return_func"
+echo 'after dotcmd, return value:' 0
+done
+echo 'after until'

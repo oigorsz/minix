@@ -1,0 +1,11 @@
+#!/bin/sh
+func()
+{
+    echo 'before continue'
+    ${1}
+    echo 'after continue'
+}
+
+echo 'before function'
+func "continue" "continue"  # don't rely on 'shift'
+echo 'after function'

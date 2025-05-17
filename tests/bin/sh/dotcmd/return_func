@@ -1,0 +1,11 @@
+#!/bin/sh
+func()
+{
+    echo 'before return'
+    ${1}
+    echo 'after return'
+}
+
+echo 'before function'
+func "return" "return"  # don't rely on 'shift'
+echo 'after function'

@@ -1,0 +1,8 @@
+#!/bin/sh
+(
+    echo 'subshell start'
+    echo 'before return'
+return
+echo 'after return, return value:' 0
+    echo 'subshell end'
+)

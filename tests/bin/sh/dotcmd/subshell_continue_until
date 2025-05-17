@@ -1,0 +1,8 @@
+#!/bin/sh
+(
+    echo 'subshell start'
+    echo 'before dotcmd'
+. "continue_until"
+echo 'after dotcmd, return value:' 0
+    echo 'subshell end'
+)

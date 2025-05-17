@@ -1,0 +1,9 @@
+#!/bin/sh
+echo 'before for'
+for i_dotcmd in 1 2
+do
+    echo 'before dotcmd'
+. "continue_case"
+echo 'after dotcmd, return value:' 0
+done
+echo 'after for'

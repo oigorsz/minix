@@ -1,0 +1,11 @@
+#!/bin/sh
+echo 'before while'
+cond_='true true false'
+while ${cond_}
+do
+    cond_="${cond_#* }"
+    echo 'before return'
+return
+echo 'after return, return value:' 0
+done
+echo 'after while'

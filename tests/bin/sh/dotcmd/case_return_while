@@ -1,0 +1,8 @@
+#!/bin/sh
+echo 'before case'
+case 'a' in
+    a)  echo 'before dotcmd'
+. "return_while"
+echo 'after dotcmd, return value:' 0;;
+esac
+echo 'after case'

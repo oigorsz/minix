@@ -1,0 +1,11 @@
+#!/bin/sh
+echo 'before while'
+cond_dotcmd='true true false'
+while ${cond_dotcmd}
+do
+    cond_dotcmd="${cond_dotcmd#* }"
+    echo 'before dotcmd'
+. "return_func"
+echo 'after dotcmd, return value:' 0
+done
+echo 'after while'

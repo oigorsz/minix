@@ -1,0 +1,11 @@
+#!/bin/sh
+func()
+{
+    echo 'before dotcmd'
+    ${1}
+    echo 'after dotcmd'
+}
+
+echo 'before function'
+func ". "continue_for"" "dotcmd"  # don't rely on 'shift'
+echo 'after function'
