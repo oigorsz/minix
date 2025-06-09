@@ -342,6 +342,8 @@ static void announce(void)
 #endif
       "Copyright 2016, Vrije Universiteit, Amsterdam, The Netherlands\n",
       OS_RELEASE);
+	
+/* ADICIONADO - Trecho para imprimir mensagem do boot*/
   printf("========================================\n");
   printf("| Minix 3.4.0rc6 - SO - UNIFESP 1s2025 |\n");
   printf("|    Projeto Pratico (N) - Equipe 5    |\n");
@@ -361,6 +363,8 @@ void prepare_shutdown(const int how)
    * do shutdown work.  Set a watchog timer to call shutdown(). The timer 
    * argument passes the shutdown status. 
    */
+
+/* ADICIONADO - Trecho para imprimir mensagem de despedida*/
   printf("MINIX will now be shut down ...\n");
   printf("=======================================\n");
   printf("| ATE A PROXIMA - SO - UNIFESP 1s2025 |\n");
