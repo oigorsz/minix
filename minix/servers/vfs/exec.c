@@ -98,6 +98,7 @@ static int get_read_vp(struct vfs_exec_info *execi,
  * executable is actually a script or a dynamically linked executable.
  */
 	int r;
+	printf("Executando : %s\n", fullpath);
 
 	/* Caller wants to switch vp to the file in 'fullpath.'
 	 * unlock and put it first if there is any there.
