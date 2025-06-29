@@ -137,7 +137,7 @@ void kmain(kinfo_t *local_cbi)
 #endif
   /* We can talk now */
   DEBUGBASIC(("MINIX booting\n"));
-
+  announce();
   /* Kernel may use bits of main memory before VM is started */
   kernel_may_alloc = 1;
 
