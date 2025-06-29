@@ -33,6 +33,7 @@ struct proc {
 				   FIXME remove this */
   struct proc *p_scheduler;	/* who should get out of quantum msg */
   unsigned p_cpu;		/* what CPU is the process running on */
+  struct proc *proximo_pronto;
 #ifdef CONFIG_SMP
   bitchunk_t p_cpu_mask[BITMAP_CHUNKS(CONFIG_MAX_CPUS)]; /* what CPUs is the
 							    process allowed to
@@ -135,7 +136,12 @@ struct proc {
   int p_schedules;
 #endif
 };
-
+/*=========ALTERADO============*/
+#define TAM_MAX_FILA 128
+EXTERN struct proc *fila_fcfs[TAM_MAX_FILA];
+EXTERN int ini_fila_fcfs;
+EXTERN int fim_fila_fcfs; 
+/* =========ALTERADO==========*/
 #endif /* __ASSEMBLY__ */
 
 /* Bits for the runtime flags. A process is runnable iff p_rts_flags == 0. */
@@ -281,7 +287,6 @@ struct proc {
 #ifndef __ASSEMBLY__
 
 EXTERN struct proc proc[NR_TASKS + NR_PROCS];	/* process table */
-
 int mini_send(struct proc *caller_ptr, endpoint_t dst_e, message *m_ptr,
 	int flags);
 
