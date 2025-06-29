@@ -81,7 +81,7 @@ static void pick_cpu(struct schedproc * proc)
 }
 
 /*===========================================================================*
- *				do_noquantum				     *
+ *				do_noquantum - COM ALTERAÇÃO		     *
  *===========================================================================*/
 
 int do_noquantum(message *m_ptr)
@@ -97,6 +97,12 @@ int do_noquantum(message *m_ptr)
 
 	rmp = &schedproc[proc_nr_n];
 
+	  /* * REMOVIDO: A lógica que penalizava o processo diminuindo sua prioridade
+     * foi removida.
+     * if (rmp->priority < MIN_USER_Q) {
+     * rmp->priority += 1; 
+     * }
+     */
 
 	if ((rv = schedule_process_local(rmp)) != OK) {
 		return rv;
@@ -327,15 +333,15 @@ static int schedule_process(struct schedproc * rmp, unsigned flags)
 
 
 /*===========================================================================*
- *				init_scheduling				     *
+ *				init_scheduling	 - COM ALTERAÇÃO	     *
  *===========================================================================*/
 void init_scheduling(void)
 {
-
+	/*REMOVIDO: A chamada para sys_setalarm que agendava a execução  periódica de balance_queues() foi removida.*/
 }
 
 /*===========================================================================*
- *				balance_queues				     *
+ *				balance_queues	- COM ALTERAÇÃO		     *
  *===========================================================================*/
 
 /* This function in called every N ticks to rebalance the queues. The current
@@ -345,5 +351,5 @@ void init_scheduling(void)
  */
 void balance_queues(void)
 {
-		
+ /*REMOVIDO: Toda a lógica de balanceamento de filas foi removida. */
 }
