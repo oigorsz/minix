@@ -40,10 +40,10 @@
 #include "arch_proto.h"
 
 #include <minix/syslib.h>
-
+/*===========ALTERADO===========*/
 struct proc* fila_fcfs[TAM_MAX_FILA];
-int ini_fila_fcfs = 0;
-int fim_fila_fcfs = 0;
+int tamanho_fila_fcfs = 0;
+/*===============================*/
 /* Scheduling and message passing functions */
 static void idle(void);
 /**
@@ -1595,15 +1595,14 @@ asyn_error:
 /*===========================================================================*
  *				enqueue					     * 
  *===========================================================================*/
-void enqueue(
-  struct proc *rp	/* this process is now runnable */
-) {					/* add to tail of queue */
+void enqueue(struct proc *rp	/* this process is now runnable */) {					/* add to tail of queue */
    assert(proc_is_runnable(rp));
-   if ((fim_fila_fcfs + 1) % TAM_MAX_FILA == ini_fila_fcfs) {
+   if (tamanho_fila_fcfs >= TAM_MAX_FILA) {
 	panic("Fila cheia!");
    }
-   fila_fcfs[fim_fila_fcfs] = rp;
-   fim_fila_fcfs = (fim_fila_fcfs + 1) % TAM_MAX_FILA;
+   fila_fcfs[tamanho_fila_fcfs] = rp;
+   tamanho_fila_fcfs++;
+
    read_tsc_64(&rp->p_accounting.enter_queue);
 }
 
@@ -1616,34 +1615,67 @@ void enqueue(
  * process on a run queue. We have to put this process back at the fron to be
  * fair
  */
-static void enqueue_head(struct proc *rp)
+/*static void enqueue_head(struct proc *rp)
 {
+  const int q = rp->priority;       /* scheduling queue to use */
+  
+  struct proc **rdy_head, **rdy_tail;
+  assert(proc_ptr_ok(rp));
+  assert(proc_is_runnable(rp));
 
-}
+  /*
+   * the process was runnable without its quantum expired when dequeued. A
+   * process with no time left should have been handled else and differently
+   */
+   assert(rp->p_cpu_time_left);
+
+   assert(q >= 0);
+
+   
+   rdy_head = get_cpu_var(rp->p_cpu, run_q_head);
+   rdy_tail = get_cpu_var(rp->p_cpu, run_q_tail);
+
+   /* Now add the process to the queue. */
+   if (!rdy_head[q]) {      /* add to empty queue */
+      rdy_head[q] = rdy_tail[q] = rp;      /* create a new queue */
+      rp->p_nextready = NULL;              /* mark new end */
+   } else {                                /* add to head of queue */
+      rp->p_nextready = rdy_head[q];       /* chain head od queue */
+      rdy_head[q] = rp;                    /* set new queue head */
+   }
+
+   /* Make note of when this process was added to queue */
+   read_tsc_64(&(get_cpulocal_var(proc_ptr->p_accounting.enter_queue)));
+
+
+   /* Process accounting for scheduling */
+   rp->p_accounting.dequeues--;
+   rp->p_accounting.preempted++;
+
+  #if DEBUG_SANITYCHECKS
+   assert(runqueues_ok_local());
+  #endif    
+}*/
 
 /*===========================================================================*
  *				dequeue					     * 
  *===========================================================================*/
 void dequeue(struct proc *rp)
 {
-   int i = ini_fila_fcfs;
-   int j;
+   int i, j;
    assert(!proc_is_runnable(rp));
-   while(i != fim_fila_fcfs) {
+
+   for (i = 0; i < tamanho_fila_fcfs; i++) {
      if (fila_fcfs[i] == rp) {
-	j = i;
-	int fim_real = (fim_fila_fcfs - 1 + TAM_MAX_FILA) % 
-TAM_MAX_FILA;
-	while(j!= fim_real) {
-	   fila_fcfs[j] = fila_fcfs[(j + 1) % TAM_MAX_FILA];
-	   j = (j+1) % TAM_MAX_FILA;
-        }
-	fim_fila_fcfs = (fim_fila_fcfs - 1 + TAM_MAX_FILA) % 
-TAM_MAX_FILA;
-	break;
-      }
-        i = (i+1) % TAM_MAX_FILA;
-   }  
+       for (j = i; j < tamanho_fila_fcfs - 1; j++) {
+         fila_fcfs[j] = fila_fcfs[j + 1];
+       }
+       tamanho_fila_fcfs--;
+       break;
+     }
+   }
+
+  
    rp->p_accounting.dequeues++;
    
    if (rp->p_accounting.enter_queue) {
@@ -1661,14 +1693,17 @@ TAM_MAX_FILA;
 /*===========================================================================*
  *				pick_proc				     * 
  *===========================================================================*/
-static struct proc * pick_proc(void)
-{
+static struct proc * pick_proc(void) {
   struct proc *rp;
-  if (ini_fila_fcfs == fim_fila_fcfs) {
+  if (tamanho_fila_fcfs == 0) {
     return NULL;
   }
-  rp = fila_fcfs[ini_fila_fcfs];
-  ini_fila_fcfs = (ini_fila_fcfs + 1) % TAM_MAX_FILA;
+  rp = fila_fcfs[0];
+  
+  for (int i = 0; i < tamanho_fila_fcfs - 1; i++) {
+    fila_fcfs[i] = fia_fcfs[i + 1];
+  }
+  tamanho_fila_fcfs--;
 
   assert(proc_is_runnable(rp));
 

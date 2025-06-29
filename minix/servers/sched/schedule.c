@@ -96,9 +96,10 @@ int do_noquantum(message *m_ptr)
 	}
 
 	rmp = &schedproc[proc_nr_n];
-	if (rmp->priority < MIN_USER_Q) {
+       /*=====ALTERADO========*/
+	/*if (rmp->priority < MIN_USER_Q) {
 		rmp->priority += 1; /* lower priority */
-	}
+	}*/
 
 	if ((rv = schedule_process_local(rmp)) != OK) {
 		return rv;
@@ -168,7 +169,8 @@ int do_start_scheduling(message *m_ptr)
 	/* Inherit current priority and time slice from parent. Since there
 	 * is currently only one scheduler scheduling the whole system, this
 	 * value is local and we assert that the parent endpoint is valid */
-	if (rmp->endpoint == rmp->parent) {
+      /*========ALETERADO=========*/
+	/*if (rmp->endpoint == rmp->parent) {
 		/* We have a special case here for init, which is the first
 		   process scheduled, and the parent of itself. */
 		rmp->priority   = USER_Q;
@@ -211,8 +213,11 @@ int do_start_scheduling(message *m_ptr)
 	default: 
 		/* not reachable */
 		assert(0);
-	}
-
+	}*/
+        /*========ADICIONADO========*/
+        rmp->priority = USER_Q;
+        rmp->time_slice = DEFAULT_USER_TIME_SLICE;
+        /*============================*/
 	/* Take over scheduling the process. The kernel reply message populates
 	 * the processes current priority and its time slice */
 	if ((rv = sys_schedctl(0, rmp->endpoint, 0, 0, 0)) != OK) {
@@ -275,7 +280,9 @@ int do_nice(message *m_ptr)
 	}
 
 	/* Store old values, in case we need to roll back the changes */
-	old_q     = rmp->priority;
+     /*=======ALTERADO======= */
+        
+	/*old_q     = rmp->priority;
 	old_max_q = rmp->max_priority;
 
 	/* Update the proc entry and reschedule the process */
@@ -288,7 +295,8 @@ int do_nice(message *m_ptr)
 		rmp->max_priority = old_max_q;
 	}
 
-	return rv;
+	return rv;*/
+   return OK; /*ADICIONADO*/
 }
 
 /*===========================================================================*
@@ -315,11 +323,11 @@ static int schedule_process(struct schedproc * rmp, unsigned flags)
 		new_cpu = rmp->cpu;
 	else
 		new_cpu = -1;
-
-	niced = (rmp->max_priority > USER_Q);
+        /*=======TRECHO DE CODIGO REMOVIDO=====*/
+	/*niced = (rmp->max_priority > USER_Q);*/
 
 	if ((err = sys_schedule(rmp->endpoint, new_prio,
-		new_quantum, new_cpu, niced)) != OK) {
+		new_quantum, new_cpu,-1 /*ALTERADO niced*/)) != OK) {
 		printf("PM: An error occurred when trying to schedule %d: %d\n",
 		rmp->endpoint, err);
 	}
@@ -335,10 +343,10 @@ void init_scheduling(void)
 {
 	int r;
 
-	balance_timeout = BALANCE_TIMEOUT * sys_hz();
+	/*balance_timeout = BALANCE_TIMEOUT * sys_hz();
 
 	if ((r = sys_setalarm(balance_timeout, 0)) != OK)
-		panic("sys_setalarm failed: %d", r);
+		panic("sys_setalarm failed: %d", r);*/
 }
 
 /*===========================================================================*
@@ -350,7 +358,7 @@ void init_scheduling(void)
  * quantum. This function will find all proccesses that have been bumped down,
  * and pulls them back up. This default policy will soon be changed.
  */
-void balance_queues(void)
+/*void balance_queues(void)
 {
 	struct schedproc *rmp;
 	int r, proc_nr;
@@ -366,4 +374,4 @@ void balance_queues(void)
 
 	if ((r = sys_setalarm(balance_timeout, 0)) != OK)
 		panic("sys_setalarm failed: %d", r);
-}
+}*/
