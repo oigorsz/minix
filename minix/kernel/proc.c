@@ -1596,13 +1596,14 @@ void enqueue(
   register struct proc *rp	/* this process is now runnable */
 )
 {
-  int target_q;
+  int target_q; // Utilização da variável target_q ao invés de q original
   const int original_q = rp->p_priority;
   struct proc **rdy_head, **rdy_tail;
   
   assert(proc_is_runnable(rp));
   assert(original_q >= 0);
 
+//Verificação acrescentada
   if (original_q >= USER_Q && original_q <= MIN_USER_Q) {
 	target_q = USER_Q;
   } else {
@@ -1656,7 +1657,7 @@ void enqueue(
 }
 
 /*===========================================================================*
- *				enqueue_head				     *
+ *				enqueue_head - COM ALTERAÇÃO		     *
  *===========================================================================*/
 /*
  * put a process at the front of its run queue. It comes handy when a process is
@@ -1666,7 +1667,7 @@ void enqueue(
  */
 static void enqueue_head(struct proc *rp)
 {
-  int target_q;
+  int target_q;   //Utilização da variável target_q ao invés da q original
   const int original_q = rp->p_priority;
   struct proc **rdy_head, **rdy_tail;
 
@@ -1679,7 +1680,7 @@ static void enqueue_head(struct proc *rp)
    */
   assert(rp->p_cpu_time_left);
   assert(original_q >= 0);
-
+//Verificação acrescentada
   if (original_q >= USER_Q && original_q <= MIN_USER_Q) {
 	target_q = USER_Q;
 } else {
@@ -1785,7 +1786,7 @@ void dequeue(struct proc *rp)
 }
 
 /*===========================================================================*
- *				pick_proc				     * 
+ *				pick_proc - COM ALTERAÇÃO 
  *===========================================================================*/
 static struct proc * pick_proc(void)
 {
@@ -1800,6 +1801,8 @@ static struct proc * pick_proc(void)
 
   rdy_head = get_cpulocal_var(run_q_head);
 
+	
+//Trocar NR_SCHED_QUEUES por USER_Q para ter somente uma fila
   for (q=0; q < USER_Q; q++) {	
 	if ((rp = rdy_head[q])) {
 	assert(proc_is_runnable(rp));
