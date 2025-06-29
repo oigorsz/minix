@@ -1590,7 +1590,7 @@ asyn_error:
 }
 
 /*===========================================================================*
- *				enqueue					     * 
+ *				enqueue	- MODIFICADO				     * 
  *===========================================================================*/
 void enqueue(
   register struct proc *rp	/* this process is now runnable */
@@ -1608,13 +1608,13 @@ void enqueue(
   struct proc **rdy_head, **rdy_tail;
   
   assert(proc_is_runnable(rp));
-
-  if(q < USER_Q){
+  /* - INÍCIO DAS MUDANÇAS - */
+  if(q < USER_Q){ /*processo de sistema*/
 	rp->p_tickets = 100;
-  } else{
+  } else{ /*processo de usuário*/
 	rp->p_tickets = (MIN_USER_Q - q) + 1;
   }
-
+  /* - FIM DAS MUDANÇAS - */
   assert(q >= 0);
 
   rdy_head = get_cpu_var(rp->p_cpu, run_q_head);
@@ -1786,7 +1786,7 @@ void dequeue(struct proc *rp)
 }
 
 /*===========================================================================*
- *				pick_proc				     * 
+ *				pick_proc - MODIFICADO			     * 
  *===========================================================================*/
 static struct proc * pick_proc(void)
 {
@@ -1798,21 +1798,27 @@ static struct proc * pick_proc(void)
   unsigned int total_tickets = 0;
   int p_proc_nr;
 
+/* Caulcular o número total de bilhetes de todos os processos prontos*/
   for(p_proc_nr = 0; p_proc_nr < NR_PROCS + NR_TASKS; p_proc_nr++){
 	rp = proc_addr(p_proc_nr);
-
+	/*verifica se o processo não está livre e na fila de execução*/
 	if(!isemptyp(rp) && proc_is_runnable(rp)){
 		total_tickets += rp->p_tickets;
 	}
   }
+
+/* Caso não houver nenhum processo pronto retorna NULL*/
   if(total_tickets == 0){
 	return NULL;
   }
 
+/*Sorteio de um número vencedor entre 0 e (total_tickets - 1)*/
+/*get monotonic() é utilizado para obter um número pseudo-aleatório*/
   unsigned int winning_ticket = get_monotonic() % total_tickets;
 
   unsigned int current_ticket_count = 0;
 
+/*Encontrar o processo com o bilhete sorteado*/
   for(p_proc_nr = 0; p_proc_nr < NR_PROCS + NR_TASKS; p_proc_nr++){
 	rp = proc_addr(p_proc_nr);
 	if(!isemptyp(rp) && proc_is_runnable(rp)){
@@ -1824,12 +1830,14 @@ static struct proc * pick_proc(void)
 	}
   }
 
+/*Caso o vencedor tenha sido encontrado é verificado se o processo é de usuário,
+*caso seja, o tempo de uso de CPU será registrado */
   if(winner_proc){
   	assert(proc_is_runnable(winner_proc));
 	if(priv(winner_proc)->s_flags & BILLABLE){
 		get_cpulocal_var(bill_ptr) = winner_proc;
 	}
-	return winner_proc;
+	return winner_proc; /* retorna o processo a ser executado */
   }
 
   return NULL;
