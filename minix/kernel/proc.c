@@ -1609,6 +1609,12 @@ void enqueue(
   
   assert(proc_is_runnable(rp));
 
+  if(q < USER_Q){
+	rp->p_tickets = 100;
+  } else{
+	rp->p_tickets = (MIN_USER_Q - q) + 1;
+  }
+
   assert(q >= 0);
 
   rdy_head = get_cpu_var(rp->p_cpu, run_q_head);
@@ -1784,32 +1790,50 @@ void dequeue(struct proc *rp)
  *===========================================================================*/
 static struct proc * pick_proc(void)
 {
-/* Decide who to run now.  A new process is selected and returned.
- * When a billable process is selected, record it in 'bill_ptr', so that the 
- * clock task can tell who to bill for system time.
- *
- * This function always uses the run queues of the local cpu!
- */
+/* Decide who to run now.  A new process is selected and returned.*/
+ 
   register struct proc *rp;			/* process to run */
-  struct proc **rdy_head;
-  int q;				/* iterate over queues */
+  struct proc *winner_proc = NULL;
+  
+  unsigned int total_tickets = 0;
+  int p_proc_nr;
 
-  /* Check each of the scheduling queues for ready processes. The number of
-   * queues is defined in proc.h, and priorities are set in the task table.
-   * If there are no processes ready to run, return NULL.
-   */
-  rdy_head = get_cpulocal_var(run_q_head);
-  for (q=0; q < NR_SCHED_QUEUES; q++) {	
-	if(!(rp = rdy_head[q])) {
-		TRACE(VF_PICKPROC, printf("cpu %d queue %d empty\n", cpuid, q););
-		continue;
+  for(p_proc_nr = 0; p_proc_nr < NR_PROCS + NR_TASKS; p_proc_nr++){
+	rp = proc_addr(p_proc_nr);
+
+	if(!isemptyp(rp) && proc_is_runnable(rp)){
+		total_tickets += rp->p_tickets;
 	}
-	assert(proc_is_runnable(rp));
-	if (priv(rp)->s_flags & BILLABLE)	 	
-		get_cpulocal_var(bill_ptr) = rp; /* bill for system time */
-	return rp;
   }
+  if(total_tickets == 0){
+	return NULL;
+  }
+
+  unsigned int winning_ticket = get_monotonic() % total_tickets;
+
+  unsigned int current_ticket_count = 0;
+
+  for(p_proc_nr = 0; p_proc_nr < NR_PROCS + NR_TASKS; p_proc_nr++){
+	rp = proc_addr(p_proc_nr);
+	if(!isemptyp(rp) && proc_is_runnable(rp)){
+		current_ticket_count += rp->p_tickets;
+		if(current_ticket_count > winning_ticket){
+			winner_proc = rp;
+			break;
+		}
+	}
+  }
+
+  if(winner_proc){
+  	assert(proc_is_runnable(winner_proc));
+	if(priv(winner_proc)->s_flags & BILLABLE){
+		get_cpulocal_var(bill_ptr) = winner_proc;
+	}
+	return winner_proc;
+  }
+
   return NULL;
+
 }
 
 /*===========================================================================*
