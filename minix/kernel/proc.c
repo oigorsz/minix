@@ -1595,7 +1595,8 @@ asyn_error:
 /*===========================================================================*
  *				enqueue					     * 
  *===========================================================================*/
-void enqueue(struct proc *rp	/* this process is now runnable */) {					/* add to tail of queue */
+/*FUNCAO MODIFICADA*/
+void enqueue(struct proc *rp) {					
    assert(proc_is_runnable(rp));
    if (tamanho_fila_fcfs >= TAM_MAX_FILA) {
 	panic("Fila cheia!");
@@ -1615,18 +1616,19 @@ void enqueue(struct proc *rp	/* this process is now runnable */) {					/* add to
  * process on a run queue. We have to put this process back at the fron to be
  * fair
  */
-/*static void enqueue_head(struct proc *rp)
+/*FUNCAO REMOVIDA (COMENTADA)*/
+static void enqueue_head(struct proc *rp)
 {
-  const int q = rp->priority;       /* scheduling queue to use */
+/*  const int q = rp->priority;        scheduling queue to use
   
   struct proc **rdy_head, **rdy_tail;
   assert(proc_ptr_ok(rp));
   assert(proc_is_runnable(rp));
 
-  /*
+  
    * the process was runnable without its quantum expired when dequeued. A
    * process with no time left should have been handled else and differently
-   */
+   
    assert(rp->p_cpu_time_left);
 
    assert(q >= 0);
@@ -1635,31 +1637,32 @@ void enqueue(struct proc *rp	/* this process is now runnable */) {					/* add to
    rdy_head = get_cpu_var(rp->p_cpu, run_q_head);
    rdy_tail = get_cpu_var(rp->p_cpu, run_q_tail);
 
-   /* Now add the process to the queue. */
-   if (!rdy_head[q]) {      /* add to empty queue */
-      rdy_head[q] = rdy_tail[q] = rp;      /* create a new queue */
-      rp->p_nextready = NULL;              /* mark new end */
-   } else {                                /* add to head of queue */
-      rp->p_nextready = rdy_head[q];       /* chain head od queue */
-      rdy_head[q] = rp;                    /* set new queue head */
+    Now add the process to the queue. 
+   if (!rdy_head[q]) {      add to empty queue 
+      rdy_head[q] = rdy_tail[q] = rp;       create a new queue 
+      rp->p_nextready = NULL;               mark new end 
+   } else {                                 add to head of queue 
+      rp->p_nextready = rdy_head[q];        chain head od queue
+      rdy_head[q] = rp;                     set new queue head 
    }
 
-   /* Make note of when this process was added to queue */
+   Make note of when this process was added to queue
    read_tsc_64(&(get_cpulocal_var(proc_ptr->p_accounting.enter_queue)));
 
 
-   /* Process accounting for scheduling */
+    Process accounting for scheduling 
    rp->p_accounting.dequeues--;
    rp->p_accounting.preempted++;
 
   #if DEBUG_SANITYCHECKS
    assert(runqueues_ok_local());
-  #endif    
-}*/
+  #endif*/    
+}
 
 /*===========================================================================*
  *				dequeue					     * 
  *===========================================================================*/
+/*FUNCAO MODIFICADA*/
 void dequeue(struct proc *rp)
 {
    int i, j;
@@ -1693,6 +1696,7 @@ void dequeue(struct proc *rp)
 /*===========================================================================*
  *				pick_proc				     * 
  *===========================================================================*/
+/*FUNCAO MODIFICADA*/
 static struct proc * pick_proc(void) {
   struct proc *rp;
   if (tamanho_fila_fcfs == 0) {
@@ -1701,7 +1705,7 @@ static struct proc * pick_proc(void) {
   rp = fila_fcfs[0];
   
   for (int i = 0; i < tamanho_fila_fcfs - 1; i++) {
-    fila_fcfs[i] = fia_fcfs[i + 1];
+    fila_fcfs[i] = fila_fcfs[i + 1];
   }
   tamanho_fila_fcfs--;
 

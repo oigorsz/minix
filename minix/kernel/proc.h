@@ -139,7 +139,7 @@ struct proc {
 /*=========ALTERADO============*/
 #define TAM_MAX_FILA 128
 EXTERN struct proc *fila_fcfs[TAM_MAX_FILA];
-EXTERN int tam_fila_fcfs;
+EXTERN int tamanho_fila_fcfs;
 /* =========ALTERADO==========*/
 #endif /* __ASSEMBLY__ */
 
