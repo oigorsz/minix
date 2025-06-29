@@ -1596,33 +1596,30 @@ void enqueue(
   register struct proc *rp	/* this process is now runnable */
 )
 {
-/* Add 'rp' to one of the queues of runnable processes.  This function is 
- * responsible for inserting a process into one of the scheduling queues. 
- * The mechanism is implemented here.   The actual scheduling policy is
- * defined in sched() and pick_proc().
- *
- * This function can be used x-cpu as it always uses the queues of the cpu the
- * process is assigned to.
- */
-  int q = rp->p_priority;	 		/* scheduling queue to use */
+  int target_q;
+  const int original_q = rp->p_priority;
   struct proc **rdy_head, **rdy_tail;
   
   assert(proc_is_runnable(rp));
+  assert(original_q >= 0);
 
-  assert(q >= 0);
+  if (original_q >= USER_Q && original_q <= MIN_USER_Q) {
+	target_q = USER_Q;
+  } else {
+	target_q = original_q;
+}
 
   rdy_head = get_cpu_var(rp->p_cpu, run_q_head);
   rdy_tail = get_cpu_var(rp->p_cpu, run_q_tail);
 
   /* Now add the process to the queue. */
-  if (!rdy_head[q]) {		/* add to empty queue */
-      rdy_head[q] = rdy_tail[q] = rp; 		/* create a new queue */
-      rp->p_nextready = NULL;		/* mark new end */
-  } 
-  else {					/* add to tail of queue */
-      rdy_tail[q]->p_nextready = rp;		/* chain tail of queue */	
-      rdy_tail[q] = rp;				/* set new queue tail */
-      rp->p_nextready = NULL;		/* mark new end */
+  if (!rdy_head[target_q]){
+      rdy_head[target_q] = rdy_tail[target_q] = rp;
+      rp->p_nextready = NULL;
+  } else {
+      rdy_tail[target_q]->p_nextready = rp;	
+      rdy_tail[target_q] = rp;
+      rp->p_nextready = NULL;
   }
 
   if (cpuid == rp->p_cpu) {
@@ -1669,8 +1666,8 @@ void enqueue(
  */
 static void enqueue_head(struct proc *rp)
 {
-  const int q = rp->p_priority;	 		/* scheduling queue to use */
-
+  int target_q;
+  const int original_q = rp->p_priority;
   struct proc **rdy_head, **rdy_tail;
 
   assert(proc_ptr_ok(rp));
@@ -1681,20 +1678,28 @@ static void enqueue_head(struct proc *rp)
    * process with no time left should have been handled else and differently
    */
   assert(rp->p_cpu_time_left);
+  assert(original_q >= 0);
 
-  assert(q >= 0);
+  if (original_q >= USER_Q && original_q <= MIN_USER_Q) {
+	target_q = USER_Q;
+} else {
+	target_q = original_q;
+}
 
 
   rdy_head = get_cpu_var(rp->p_cpu, run_q_head);
   rdy_tail = get_cpu_var(rp->p_cpu, run_q_tail);
 
   /* Now add the process to the queue. */
-  if (!rdy_head[q]) {		/* add to empty queue */
-	rdy_head[q] = rdy_tail[q] = rp; 	/* create a new queue */
+  if (!rdy_head[target_q]) {		/* add to empty queue */
+	rdy_head[target_q] = rdy_tail[target_q] = rp; 	/* create a new 
+queue */
 	rp->p_nextready = NULL;			/* mark new end */
   } else {					/* add to head of queue */
-	rp->p_nextready = rdy_head[q];		/* chain head of queue */
-	rdy_head[q] = rp;			/* set new queue head */
+	rp->p_nextready = rdy_head[target_q];		/* chain head of 
+queue */
+	rdy_head[target_q] = rp;			/* set new queue 
+head */
   }
 
   /* Make note of when this process was added to queue */
@@ -1784,12 +1789,6 @@ void dequeue(struct proc *rp)
  *===========================================================================*/
 static struct proc * pick_proc(void)
 {
-/* Decide who to run now.  A new process is selected and returned.
- * When a billable process is selected, record it in 'bill_ptr', so that the 
- * clock task can tell who to bill for system time.
- *
- * This function always uses the run queues of the local cpu!
- */
   register struct proc *rp;			/* process to run */
   struct proc **rdy_head;
   int q;				/* iterate over queues */
@@ -1798,17 +1797,27 @@ static struct proc * pick_proc(void)
    * queues is defined in proc.h, and priorities are set in the task table.
    * If there are no processes ready to run, return NULL.
    */
+
   rdy_head = get_cpulocal_var(run_q_head);
-  for (q=0; q < NR_SCHED_QUEUES; q++) {	
-	if(!(rp = rdy_head[q])) {
-		TRACE(VF_PICKPROC, printf("cpu %d queue %d empty\n", cpuid, q););
-		continue;
-	}
+
+  for (q=0; q < USER_Q; q++) {	
+	if ((rp = rdy_head[q])) {
 	assert(proc_is_runnable(rp));
-	if (priv(rp)->s_flags & BILLABLE)	 	
-		get_cpulocal_var(bill_ptr) = rp; /* bill for system time */
+	if (priv(rp)->s_flags & BILLABLE) {
+		get_cpulocal_var(bill_ptr) = rp;
+	}
 	return rp;
-  }
+    }
+}
+
+if ((rp = rdy_head[USER_Q])) {
+	assert(proc_is_runnable(rp));
+	if (priv(rp) ->s_flags & BILLABLE){
+		get_cpulocal_var(bill_ptr) = rp;
+	}
+	return rp;
+}  
+
   return NULL;
 }
 
