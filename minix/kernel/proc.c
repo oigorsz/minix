@@ -1798,10 +1798,9 @@ static struct proc * pick_proc(void)
   unsigned int total_tickets = 0;
   int p_proc_nr;
 
-/* Caulcular o número total de bilhetes de todos os processos prontos*/
+/* Calcular o número total de bilhetes de todos os processos prontos */
   for(p_proc_nr = 0; p_proc_nr < NR_PROCS + NR_TASKS; p_proc_nr++){
 	rp = proc_addr(p_proc_nr);
-	/*verifica se o processo não está livre e na fila de execução*/
 	if(!isemptyp(rp) && proc_is_runnable(rp)){
 		total_tickets += rp->p_tickets;
 	}
@@ -1830,7 +1829,7 @@ static struct proc * pick_proc(void)
 	}
   }
 
-/*Caso o vencedor tenha sido encontrado é verificado se o processo é de usuário,
+/* Caso o vencedor tenha sido encontrado é verificado se o processo é de usuário,
 *caso seja, o tempo de uso de CPU será registrado */
   if(winner_proc){
   	assert(proc_is_runnable(winner_proc));
