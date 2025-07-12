@@ -1590,7 +1590,7 @@ asyn_error:
 }
 
 /*===========================================================================*
- *				enqueue					     * 
+ *				enqueue		 - COM ALTERAÇÃO			     * 
  *===========================================================================*/
 void enqueue(
   register struct proc *rp	/* this process is now runnable */
